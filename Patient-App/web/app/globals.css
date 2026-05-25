@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --theme-primary: #0DA99E;
+  --theme-50: #E6FAF9;
+  --theme-100: #9FE1CB;
+  --theme-400: #1D9E75;
+  --theme-500: #0DA99E;
+  --theme-600: #0F6E56;
+  --theme-700: #087A72;
+  --theme-900: #04342C;
+  --mesh-1: #e6faf9;
+  --mesh-2: #ffffff;
+  --mesh-3: #f0fdfa;
+  --mesh-4: #f5f3ff;
+
+  --primary: #1A56DB;
+  --primary-light: #EBF2FF;
+  --success: #0E9F6E;
+  --warning: #FBBF24;
+  --danger: #E02424;
+}
+
+.theme-green {
+  --theme-primary: #0DA99E;
+  --theme-50: #E6FAF9;
+  --theme-100: #9FE1CB;
+  --theme-400: #1D9E75;
+  --theme-500: #0DA99E;
+  --theme-600: #0F6E56;
+  --theme-700: #087A72;
+  --theme-900: #04342C;
+  --mesh-colors: #e6faf9, #ffffff, #f0fdfa, #f5f3ff;
+}
+
+.theme-purple {
+  --theme-primary: #7C6FCD;
+  --theme-50: #F0EDFB;
+  --theme-100: #D8D0F5;
+  --theme-400: #9080E0;
+  --theme-500: #7C6FCD;
+  --theme-600: #5E51B5;
+  --theme-700: #4B4191;
+  --theme-900: #252048;
+  --mesh-1: #f0edfb;
+  --mesh-2: #ffffff;
+  --mesh-3: #faf5ff;
+  --mesh-4: #f3f4f6;
+}
+
+.theme-blue {
+  --theme-primary: #2563EB;
+  --theme-50: #EFF6FF;
+  --theme-100: #DBEAFE;
+  --theme-400: #60A5FA;
+  --theme-500: #3B82F6;
+  --theme-600: #2563EB;
+  --theme-700: #1D4ED8;
+  --theme-900: #1E3A8A;
+  --mesh-1: #eff6ff;
+  --mesh-2: #ffffff;
+  --mesh-3: #f0f9ff;
+  --mesh-4: #f8fafc;
+}
+
+.theme-rose {
+  --theme-primary: #E11D48;
+  --theme-50: #FFF1F2;
+  --theme-100: #FFE4E6;
+  --theme-400: #FB7185;
+  --theme-500: #F43F5E;
+  --theme-600: #E11D48;
+  --theme-700: #BE123C;
+  --theme-900: #881337;
+  --mesh-1: #fff1f2;
+  --mesh-2: #ffffff;
+  --mesh-3: #fff5f5;
+  --mesh-4: #faf5ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #F9FAFB;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #BBEFED;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #90E4E0;
+}
+
+/* Card base */
+.card {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #EFF1F6;
+  box-shadow: 0 4px 20px -2px rgba(13, 169, 158, 0.03), 0 2px 4px -1px rgba(13, 169, 158, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  box-shadow: 0 10px 25px -5px rgba(13, 169, 158, 0.08), 0 8px 10px -6px rgba(13, 169, 158, 0.06);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-ring {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes breatheInhale {
+  from {
+    transform: scale(0.9);
+    box-shadow: 0 0 15px rgba(13, 169, 158, 0.1);
+  }
+
+  to {
+    transform: scale(1.25);
+    box-shadow: 0 0 35px rgba(13, 169, 158, 0.4);
+  }
+}
+
+@keyframes breatheExhale {
+  from {
+    transform: scale(1.25);
+    box-shadow: 0 0 35px rgba(13, 169, 158, 0.4);
+  }
+
+  to {
+    transform: scale(0.9);
+    box-shadow: 0 0 15px rgba(13, 169, 158, 0.1);
+  }
+}
+
+@keyframes breatheHold {
+
+  0%,
+  100% {
+    transform: scale(1.25);
+    box-shadow: 0 0 35px rgba(13, 169, 158, 0.4);
+  }
+
+  50% {
+    transform: scale(1.28);
+    box-shadow: 0 0 45px rgba(13, 169, 158, 0.6);
+  }
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes particleRise {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-120px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.animate-pop-up {
+  animation: popUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.blink {
+  animation: blink 1.4s ease-in-out infinite;
+}
+
+.hover-float {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hover-float:hover {
+  box-shadow: 0 12px 24px -6px rgba(13, 169, 158, 0.08), 0 8px 16px -8px rgba(13, 169, 158, 0.06);
+  border-color: rgba(13, 169, 158, 0.2);
+}
+
+/* Breathing animation helpers */
+.bubble-inhale {
+  animation: breatheInhale 4s ease-in-out infinite alternate;
+}
+
+.bubble-exhale {
+  animation: breatheExhale 4s ease-in-out infinite alternate;
+}
+
+/* Particle Emitter styling */
+.particle {
+  position: absolute;
+  pointer-events: none;
+  font-size: 1.5rem;
+  z-index: 50;
+  animation: particleRise 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Mood colors */
+.mood-1 {
+  background: #E02424;
+}
+
+.mood-2 {
+  background: #F97316;
+}
+
+.mood-3 {
+  background: #FBBF24;
+}
+
+.mood-4 {
+  background: #3BD671;
+}
+
+.mood-5 {
+  background: #0E9F6E;
+}
+
+/* Chat bubbles */
+.bubble-ai {
+  background: white;
+  border: 1px solid #F3F4F6;
+  border-radius: 18px 18px 18px 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  animation: popUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.bubble-user {
+  background: #0DA99E;
+  border-radius: 18px 18px 4px 18px;
+  color: white;
+  animation: popUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Glassmorphism sidebar and modals */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(13, 169, 158, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(13, 169, 158, 0);
+  }
+}
+
+.alert-pulse-badge {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes gradientMesh {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient-mesh {
+  background: linear-gradient(-45deg, var(--mesh-1), var(--mesh-2), var(--mesh-3), var(--mesh-4));
+  background-size: 400% 400%;
+  animation: gradientMesh 14s ease infinite;
+}
+
+/* ── Portal-style: Click Sparkle Particles ────────────────────────────────── */
+.click-sparkle-particle {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9999;
+  animation: sparkleOut 0.8s cubic-bezier(0.1, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes sparkleOut {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(var(--dx), var(--dy), 0) scale(0);
+    opacity: 0;
+  }
+}
+
+/* ── Portal-style: Confetti Burst Pieces ─────────────────────────────────── */
+.confetti-burst-piece {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  animation: confettiExplode 1.4s cubic-bezier(0.1, 0.6, 0.3, 1) forwards;
+}
+
+@keyframes confettiExplode {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(var(--dx), var(--dy), 0) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+/* ── Portal-style: Floating Cards ────────────────────────────────────────── */
+.float-card-1 {
+  /* Disabled floating animation to keep elements stable */
+}
+
+.float-card-2 {
+  /* Disabled floating animation to keep elements stable */
+}
+
+.float-card-3 {
+  /* Disabled floating animation to keep elements stable */
+}
+
+@keyframes floatingCard1 {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-0.5deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(0.5deg);
+  }
+}
+
+@keyframes floatingCard2 {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0.5deg);
+  }
+
+  50% {
+    transform: translateY(-14px) rotate(-0.5deg);
+  }
+}
+
+@keyframes floatingCard3 {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(-0.5deg);
+  }
+}
+
+/* ── Portal-style: Pacer Breathe Bubble ──────────────────────────────────── */
+@keyframes pacerBreathe {
+
+  0%,
+  100% {
+    transform: scale(0.85);
+    background-color: #E6FAF9;
+  }
+
+  50% {
+    transform: scale(1.22);
+    background-color: #bbf2f0;
+  }
+}
+
+@keyframes pacerGlow {
+
+  0%,
+  100% {
+    transform: scale(0.85);
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: scale(1.6);
+    opacity: 0.3;
+  }
+}
+
+@keyframes pacerTextPulse {
+
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.pacer-breathe {
+  animation: pacerBreathe 5s ease-in-out infinite;
+}
+
+.pacer-glow {
+  animation: pacerGlow 5s ease-in-out infinite;
+}
+
+.pacer-text-pulse {
+  animation: pacerTextPulse 5s ease-in-out infinite;
+}
+
+/* ── Portal-style: SVG Sparkline Draw ───────────────────────────────────── */
+.sparkline-draw {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawLine 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.sparkline-endpoint-pulse {
+  animation: pulseEndpoint 1.8s infinite;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulseEndpoint {
+
+  0%,
+  100% {
+    r: 2.5;
+    opacity: 1;
+  }
+
+  50% {
+    r: 5;
+    opacity: 0.4;
+  }
+}
+
+/* ── Portal-style: Status Pulse Dots ─────────────────────────────────────── */
+@keyframes pulseDot {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 0 12px #0E9F6E;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulseWarning {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+    box-shadow: 0 0 10px #FBBF24;
+  }
+
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+.status-dot-pulse {
+  animation: pulseDot 2s infinite;
+}
+
+.status-dot-warning {
+  animation: pulseWarning 1.5s infinite;
+}
+
+/* ── Portal-style: 3D Tilt Card ──────────────────────────────────────────── */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* ── Portal-style: Gradient Text Utility ─────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #0DA99E 0%, #7C6FCD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* ── Portal-style: Hero Badge ────────────────────────────────────────────── */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, rgba(13, 169, 158, 0.05), rgba(124, 111, 205, 0.05));
+  border: 1px solid #EFF1F6;
+  color: #087A72;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 20px -2px rgba(100, 80, 200, 0.03);
+}
+
+/* ── Confetti button helper ─────────────────────────────────────────────── */
+.btn-confetti {
+  position: relative;
+  overflow: visible;
+}
+@keyframes slideUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeInUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+.animate-slide-up { animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-fade-in-up { animation: fadeInUp 0.4s ease-out both; }
+

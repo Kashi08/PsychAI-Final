@@ -1,0 +1,12 @@
+Copy your trained NLP model files here from your original PsychAI project:
+
+  - mental_health_classifier.pkl
+  - symptom_disease_classifier.pkl
+  - chat_tfidf_v2.pkl
+  - chat_matrix_v2.pkl
+  - class_index.pkl
+  - chat_responses_v2.pkl
+  - chat_contexts_v2.pkl
+  - class_responses.json
+
+If you don't have these, the app still works using Claude API + fallback responses.

@@ -1,0 +1,86 @@
+{
+  "Happy": [
+    "That's wonderful! I'm so glad you're feeling happy today. Keep nurturing that joy! 😊",
+    "Yay! Happiness suits you well. What's making today so great?",
+    "It's so lovely to hear you're feeling good! Savour this feeling. 🌟",
+    "That positive energy is beautiful! Is there something specific that made you happy?"
+  ],
+  "Calm": [
+    "It sounds like you're in a good, grounded place. That's really healthy! 🌿",
+    "Feeling calm is a superpower. Enjoy that peaceful headspace!",
+    "I'm glad you're feeling at ease. Let that calmness carry you through your day.",
+    "Balanced and steady — that's a wonderful state to be in!"
+  ],
+  "Grateful": [
+    "Gratitude is one of the most powerful emotions. It's lovely you're feeling thankful! 🙏",
+    "Counting your blessings is always a good practice. What are you grateful for today?",
+    "That sense of thankfulness will carry you far. Cherish it!",
+    "Gratitude shifts everything. I'm happy you're feeling this way!"
+  ],
+  "Excited": [
+    "That excitement sounds wonderful! What are you looking forward to? 🎉",
+    "Your enthusiasm is contagious! Channel that energy into something great.",
+    "Excitement is such a beautiful feeling. Go make the most of it!",
+    "I love that energy! What's got you so pumped up today?"
+  ],
+  "Anxiety": [
+    "I hear you — anxiety can feel really overwhelming. Let's try a quick breathing exercise: breathe in for 4 counts, hold for 4, out for 4. 🌬️",
+    "Anxiety is tough, but you're not alone. Can you tell me more about what's worrying you?",
+    "That sounds really hard. Anxiety lies to us sometimes — not everything we fear will happen. You're safe right now.",
+    "Let's ground you. Name 5 things you can see around you right now. I'm here with you. 💙"
+  ],
+  "Depression": [
+    "I'm really sorry you're feeling this way. Depression is heavy, and your feelings are completely valid. 💙",
+    "You don't have to go through this alone. Even small steps matter — can you do one tiny kind thing for yourself today?",
+    "Depression makes everything harder. Please be gentle with yourself. You matter more than you know.",
+    "I'm here with you in this darkness. Would it help to talk about what's been weighing on you?"
+  ],
+  "Stress": [
+    "That sounds like a lot to carry. Stress is your mind's way of saying it needs support. 🌿",
+    "When everything feels like too much, try breaking it into the smallest possible next step. What's one tiny thing you can do?",
+    "You're doing your best in a tough situation. Make sure you're not putting your wellbeing last.",
+    "Overwhelm is real. Let's breathe through this together — in for 4, hold for 4, out for 6. 🌬️"
+  ],
+  "Anger": [
+    "Anger is a valid emotion, but it doesn't have to control you. Would it help to talk about what triggered this?",
+    "I hear your frustration. Let's pause and breathe before reacting — 5 deep breaths can change everything.",
+    "That sounds really frustrating. Your anger is valid; let's find a healthy outlet for it.",
+    "You have every right to feel what you feel. Let's work through it together rather than against it."
+  ],
+  "Loneliness": [
+    "Loneliness is one of the hardest feelings. Know that I'm here with you right now. 💙",
+    "Feeling disconnected is really painful. Would you like to talk? Sometimes being heard makes all the difference.",
+    "You're not as alone as you feel right now. I'm listening, and you matter.",
+    "Loneliness can be overwhelming. Is there one person — even online — you could reach out to today?"
+  ],
+  "Grief": [
+    "I'm so sorry for your loss. Grief is love with nowhere to go — and it's okay to feel all of it. 💙",
+    "Losing someone is one of life's hardest experiences. Please be gentle with yourself.",
+    "There's no right way to grieve. Whatever you're feeling is okay. I'm here with you.",
+    "Your grief reflects how deeply you loved. That love doesn't disappear."
+  ],
+  "Suicidal": [
+    "I'm really concerned about you and I care about your safety. Please reach out to iCall right now: 9152987821. You don't have to face this alone. 💙",
+    "What you're feeling is real and it's serious. Please contact iCall at 9152987821 — they're trained to help and they care. I'm here too.",
+    "I hear you, and I don't want you to be in pain. Please call or text iCall: 9152987821. You matter deeply.",
+    "Your life has value, even when it doesn't feel that way. Please reach out to iCall: 9152987821 right now. You deserve support."
+  ],
+  "Trauma": [
+    "What you've been through sounds incredibly painful. You survived something hard, and that takes strength. 💙",
+    "Trauma responses are your mind's way of protecting you. You're not broken — you're healing.",
+    "I'm so sorry you experienced that. You deserve to feel safe, and healing is possible.",
+    "Thank you for trusting me with this. Trauma takes time to process — please be patient with yourself."
+  ],
+  "Insomnia": [
+    "Sleep struggles are exhausting in every sense. Try a body scan before bed — start from your toes and relax each muscle upward. 🌙",
+    "Racing thoughts at night are so frustrating. Try writing them down in a journal before bed to 'offload' your mind.",
+    "Insomnia can really affect everything. Make sure your room is dark and cool, and try a consistent sleep time.",
+    "Trouble sleeping is your body asking for care. Avoid screens 30 minutes before bed and try the 4-7-8 breathing technique."
+  ],
+  "Normal": [
+    "I'm here for you. How are you feeling today?",
+    "I'm listening. Tell me what's on your mind.",
+    "Whatever you're going through, I'm here to help.",
+    "Take your time. I'm not going anywhere."
+  ]
+}

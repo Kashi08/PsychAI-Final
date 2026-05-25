@@ -1,0 +1,33 @@
+# Environment files — NEVER commit these
+.env
+.env.local
+.env.production
+backend/.env
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Expo
+.expo/
+dist/
+web-build/
+
+# NLP models (too large for git — use Render disk or Supabase storage)
+backend/models/*.pkl
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+*.apk
+*.aab
+*.ipa
+
+# Logs
+*.log
+npm-debug.log*

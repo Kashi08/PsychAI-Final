@@ -1,0 +1,164 @@
+PsychAI Web App — Setup Guide
+==============================
+
+Demo account:
+  Email:    demo@psychai.app
+  Password: PsychAI@Demo2024
+
+Pages included:
+  /                  Landing page (public)
+  /auth/login        Sign in / Sign up + demo button
+  /onboarding        4-step setup wizard (new users)
+  /dashboard         Home with wellness ring, mood chart, daily goals
+  /chat              AI chat (Claude API + NLP fallback)
+  /mood              Mood tracker with emoji faces + history
+  /journal           CBT thought record + free write
+  /mindfulness       4-7-8 / box breathing + 5-4-3-2-1 grounding
+  /symptoms          Symptom checker (NLP-powered)
+  /profile           Profile, avatar color, badges, settings
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1 — Open in VS Code
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Extract the ZIP
+2. Open VS Code
+3. File > Open Folder > select "psychoai-web"
+4. Open terminal: Ctrl+` (backtick)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2 — Install dependencies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+In the terminal:
+
+    npm install
+
+This installs Next.js, Tailwind, Supabase client, Recharts, Zustand.
+Takes 1-2 minutes.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3 — Add your API keys
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open .env.local (already in this folder) and fill in:
+
+    NEXT_PUBLIC_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGci...
+    NEXT_PUBLIC_API_URL=http://localhost:8000
+
+Get Supabase URL and anon key from:
+  supabase.com → your project → Settings → API
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4 — Run locally
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    npm run dev
+
+Open browser → http://localhost:3000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5 — Deploy to Vercel (Free)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Option A — Vercel CLI (fastest):
+
+    npm install -g vercel
+    vercel
+
+Follow the prompts. When asked for env variables, add all three
+from your .env.local.
+
+Option B — GitHub (recommended for ongoing updates):
+
+1. Push this folder to GitHub:
+       git init
+       git add .
+       git commit -m "PsychAI web app"
+       git remote add origin https://github.com/YOU/psychoai-web.git
+       git push -u origin main
+
+2. Go to vercel.com → New Project → Import your repo
+3. Framework: Next.js (auto-detected)
+4. Add environment variables (same as .env.local)
+5. Click Deploy
+
+Your site will be live at: https://psychoai-web.vercel.app
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 6 — Connect your custom domain
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Vercel dashboard → your project → Settings → Domains
+2. Add: psychai.com (or whatever you bought)
+3. Vercel shows you DNS records
+
+In your domain registrar (Namecheap / Hostinger):
+Add these DNS records:
+   Type: A      | Host: @   | Value: 76.76.21.21
+   Type: CNAME  | Host: www | Value: cname.vercel-dns.com
+
+Wait 10-30 minutes for DNS to propagate. Done!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"Module not found" or import errors
+→ Run: npm install
+
+Supabase auth not working
+→ Check .env.local has correct URL and anon key (no trailing spaces)
+→ Make sure email confirmation is OFF in Supabase Auth settings
+
+Chat not responding
+→ Make sure backend is running (npm run dev in backend folder OR Render is up)
+→ Check NEXT_PUBLIC_API_URL points to the right URL
+
+Tailwind styles not applying
+→ Run: npm run dev again (it sometimes needs a restart after install)
+
+White screen / error on page
+→ Open browser DevTools (F12) → Console tab → read the red error message
+→ Most common: env variable not filled in, or Supabase key wrong
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FOLDER STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+psychoai-web/
+├── app/                   All pages (Next.js App Router)
+│   ├── page.tsx           Landing page
+│   ├── layout.tsx         Root layout (fonts, metadata)
+│   ├── globals.css        Tailwind + custom styles
+│   ├── auth/login/        Login page with demo button
+│   ├── onboarding/        4-step onboarding wizard
+│   ├── dashboard/         Home dashboard
+│   ├── chat/              AI Chat page
+│   ├── mood/              Mood tracker
+│   ├── journal/           CBT + free write journal
+│   ├── mindfulness/       Breathing exercises
+│   ├── symptoms/          Symptom checker
+│   └── profile/           Profile + badges
+├── components/
+│   └── Sidebar.tsx        Left navigation sidebar
+├── lib/
+│   └── supabase.ts        Supabase browser client
+├── .env.local             Your secrets (fill this in)
+├── package.json           Dependencies
+├── tailwind.config.js     Theme colors + fonts
+└── next.config.js         Next.js config
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TECH STACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Framework  : Next.js 14 (App Router)
+Styling    : Tailwind CSS
+Database   : Supabase (PostgreSQL)
+Auth       : Supabase Auth
+AI         : Claude API via FastAPI backend
+Charts     : Recharts
+State      : React useState (no extra lib needed)
+Deployment : Vercel (free)

@@ -1,0 +1,164 @@
+PsychAI — Psychologist Web App Setup Guide
+==========================================
+
+Demo credentials:
+  Email:    psych@psychai.app
+  Password: PsychAI@Doctor2024
+
+Runs on port 3001 (so you can run patient app on 3000 at the same time)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PAGES IN THIS APP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+/auth/login     Clinician login with demo button
+/overview       Main dashboard — stats, mood trend, risk distribution
+/patients       All patients with search, filter, sort by risk
+/patients/[id]  Individual patient — mood chart, AI summary, chat, notes
+/alerts         Crisis alerts with Twilio status and resolve button
+/sessions       Upcoming session calendar
+/messages       Secure patient messaging (HIPAA-safe)
+/analytics      Group analytics — mood trends, engagement, keywords
+/reports        Generate + download PDF patient reports
+/settings       Profile, access code, notification prefs
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1 — Open in VS Code
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Extract PsychAI-Psychologist.zip
+2. Open VS Code → File > Open Folder → select "psychoai-psych"
+3. Open terminal: Ctrl+`
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2 — Install dependencies
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  npm install
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3 — Set up Supabase (add psych tables)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Go to supabase.com → your project → SQL Editor
+2. Open database/psych_schema.sql from this folder
+3. Paste contents → Run
+4. Go to Authentication > Users > Add user:
+     Email:    psych@psychai.app
+     Password: PsychAI@Doctor2024
+5. Copy the UUID shown
+6. Back in SQL Editor → find the line:
+     psych_uid UUID := 'PSYCH_USER_UUID_HERE';
+   Replace with the actual UUID → Run just the DO $$ block
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4 — Fill in .env.local
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Open .env.local and add your values:
+
+  NEXT_PUBLIC_SUPABASE_URL=https://YOUR_PROJECT.supabase.co
+  NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGci...
+  GROQ_API_KEY=gsk_your_groq_key
+
+Same Supabase project as patient app.
+Same Groq key from console.groq.com (free).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5 — Run locally
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  npm run dev
+
+Opens on http://localhost:3001
+(Patient web app runs on 3000, psych app on 3001)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 6 — Deploy to Vercel
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Push to GitHub (different repo from patient app)
+2. vercel.com → New Project → import repo
+3. Add env variables (same as .env.local)
+4. Deploy → get URL like psychoai-psych.vercel.app
+
+For a subdomain like psych.psychai.com:
+  Vercel > Settings > Domains > add psych.psychai.com
+  Add CNAME record in your domain registrar:
+    Host: psych   Value: cname.vercel-dns.com
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HOW PATIENT ↔ PSYCHOLOGIST CONNECTION WORKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Psychologist creates account → gets access code (e.g. DR-DEMO-2024)
+2. Patient enters code in patient app → Settings → Therapist code
+3. This creates a patient_links row in Supabase
+4. Psychologist dashboard now shows that patient's:
+   - Mood logs (real-time via Supabase)
+   - Journal entries (with patient consent)
+   - Chat summaries
+   - Crisis events
+5. Crisis detection:
+   - Patient types crisis keywords in chat
+   - crisisService.ts detects it SILENTLY
+   - Calls backend → Twilio calls guardian
+   - Also writes to crisis_events table
+   - Psychologist sees alert in /alerts within seconds
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AI FEATURES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Patient detail page → "Generate with Groq" button:
+  Sends patient data to /api/ai-summary
+  Groq (Llama 3.3 70B) generates a 3-4 sentence clinical summary
+  Includes: mood trends, PHQ-9/GAD-7, journal excerpts, risk level
+  Free — uses same Groq key
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FOLDER STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+psychoai-psych/
+├── app/
+│   ├── auth/login/         Clinician login page
+│   ├── (dashboard)/        All protected pages (layout with sidebar)
+│   │   ├── overview/       Main dashboard
+│   │   ├── patients/       Patient list + [id] detail page
+│   │   ├── alerts/         Crisis alert center
+│   │   ├── sessions/       Appointment calendar
+│   │   ├── messages/       Secure messaging
+│   │   ├── analytics/      Group charts and insights
+│   │   ├── reports/        PDF report generator
+│   │   └── settings/       Profile + preferences
+│   └── api/
+│       └── ai-summary/     Groq AI clinical summary endpoint
+├── components/
+│   └── Sidebar.tsx         Purple-themed navigation
+├── database/
+│   └── psych_schema.sql    Run in Supabase after patient schema
+├── lib/supabase.ts
+├── .env.local              Fill in your keys
+└── SETUP_GUIDE.txt
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Redirects to login immediately:
+  → .env.local not filled in properly
+  → Run Supabase schema and create demo user first
+
+"psychologist_profiles" table not found:
+  → Run database/psych_schema.sql in Supabase SQL Editor
+
+AI Summary button does nothing:
+  → Check GROQ_API_KEY in .env.local (no NEXT_PUBLIC_ prefix)
+  → Restart npm run dev after changing .env.local
+
+Port conflict:
+  → If 3001 is busy: npm run dev -- -p 3002
+
+White screen:
+  → Open in incognito window (Ctrl+Shift+N)
