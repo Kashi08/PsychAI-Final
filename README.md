@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PsychAI: AI-Powered Telepsychiatry Platform
 
 PsychAI is a modern, comprehensive telepsychiatry and mental wellness platform that bridges the gap between patients and clinicians. By leveraging advanced Artificial Intelligence (Groq API), realtime databases, and a sleek user interface, PsychAI delivers personalized mental health support for patients and powerful analytical tools for psychologists.
@@ -76,3 +77,7 @@ The public-facing portal for PsychAI.
 
 ## Security & Privacy
 PsychAI is built with strict Row Level Security (RLS) policies. Clinicians can only view data for patients explicitly linked to them via cryptographic consent, and patients have total control over their private journals and chat logs. All database interactions are securely handled via Supabase.
+=======
+# PsychAI-Final
+An AI-powered telepsychiatry platform bridging patients and clinicians. Built with Next.js &amp; Supabase, featuring a Groq-powered therapy chatbot, mood analytics, and real-time crisis alerts.
+>>>>>>> 0129445df66075dcc58663550584866a94c36565
