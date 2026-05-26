@@ -381,7 +381,7 @@ export default function ProfilePage() {
                         className="flex-1 text-sm text-gray-900 border-b border-teal-400 focus:outline-none pb-0.5 bg-transparent"
                       />
                     ) : (
-                      <span className="flex-1 text-sm font-medium text-gray-900">{form[f.key as keyof typeof form] || '—'}</span>
+                      <span className="flex-1 text-sm font-medium text-gray-900">{form[f.key as keyof typeof form] || ' '}</span>
                     )}
                   </div>
                 ))}

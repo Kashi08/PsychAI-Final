@@ -33,7 +33,7 @@ export default function LandingPage() {
           <span className="text-teal-500">companion</span>
         </h1>
         <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-          PsychAI combines Claude AI with clinical NLP models to give you empathetic support, mood tracking, CBT journaling, and crisis detection — all in one safe space.
+          PsychAI combines Claude AI with clinical NLP models to give you empathetic support, mood tracking, CBT journaling, and crisis detection   all in one safe space.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href="/auth/login" className="w-full sm:w-auto bg-teal-500 hover:bg-teal-600 text-white font-bold text-base px-8 py-4 rounded-2xl transition-colors shadow-md">
@@ -65,7 +65,7 @@ export default function LandingPage() {
       <section className="bg-teal-50 border-t border-teal-100 py-16">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="font-display font-extrabold text-3xl text-gray-900 mb-4">Try it right now</h2>
-          <p className="text-gray-500 mb-2">Use the demo account — pre-loaded with 7 days of data, badges, and a sample chat session.</p>
+          <p className="text-gray-500 mb-2">Use the demo account   pre-loaded with 7 days of data, badges, and a sample chat session.</p>
           <div className="bg-white rounded-2xl border border-teal-200 p-4 mb-6 inline-block">
             <div className="text-sm text-gray-500">Email: <span className="font-mono font-semibold text-gray-900">demo@psychai.app</span></div>
             <div className="text-sm text-gray-500">Password: <span className="font-mono font-semibold text-gray-900">PsychAI@Demo2024</span></div>
@@ -114,7 +114,7 @@ const FEATURES = [
   },
   {
     title: 'Silent Crisis Detection',
-    desc: 'Keyword detection in English and Hindi. Guardian is quietly alerted via Twilio — patient is never alarmed.',
+    desc: 'Keyword detection in English and Hindi. Guardian is quietly alerted via Twilio   patient is never alarmed.',
     bg: '#FEF3C7',
     icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z" stroke="#FBBF24" strokeWidth="1.8"/><circle cx="12" cy="10" r="3" stroke="#FBBF24" strokeWidth="1.8"/></svg>,
   },

@@ -312,7 +312,7 @@ function FindPsychologistsPanel({ userId, onLinked }: { userId: string; onLinked
               Find a Psychologist Near You
             </h2>
             <p className="text-gray-500 text-sm leading-relaxed max-w-xl">
-              You're not linked to a mental health professional yet. Browse verified psychologists below, check their specialties, and send a connection request — they'll review and link your account.
+              You're not linked to a mental health professional yet. Browse verified psychologists below, check their specialties, and send a connection request   they'll review and link your account.
             </p>
           </div>
           <div className="flex items-center gap-2 bg-white border border-amber-200 rounded-xl px-4 py-2.5 shadow-sm flex-shrink-0">
@@ -956,7 +956,7 @@ export default function AppointmentsPage() {
               })}
             </div>
 
-            {/* Step 1 — Calendar */}
+            {/* Step 1   Calendar */}
             {step === 1 && (
               <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm">
                 <h2 className="font-display font-bold text-xl text-gray-900 mb-6">Select a date</h2>
@@ -1012,7 +1012,7 @@ export default function AppointmentsPage() {
               </div>
             )}
 
-            {/* Step 2 — Time + Type */}
+            {/* Step 2   Time + Type */}
             {step === 2 && (
               <div className="space-y-6">
                 <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm">
@@ -1049,7 +1049,7 @@ export default function AppointmentsPage() {
               </div>
             )}
 
-            {/* Step 3 — Confirm */}
+            {/* Step 3   Confirm */}
             {step === 3 && (
               <div className="space-y-5">
                 <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm">

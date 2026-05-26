@@ -115,7 +115,7 @@ def health():
     }
 
 
-# ── Groq Chat — PRIMARY endpoint (kept as /chat/claude so mobile app works) ──
+# ── Groq Chat   PRIMARY endpoint (kept as /chat/claude so mobile app works) ──
 @app.post("/chat/claude")
 @app.post("/chat/groq")
 async def chat_groq(req: ChatRequest):
@@ -263,7 +263,7 @@ def symptom_check(req: SymptomRequest):
         # Even without models, handle obvious positives gracefully
         if _is_clearly_positive(req.symptoms):
             return {"condition": "Positive Wellbeing", "confidence": 0.99}
-        return {"condition": "Unable to assess — models not loaded", "confidence": 0.0}
+        return {"condition": "Unable to assess   models not loaded", "confidence": 0.0}
 
     # Keyword guard: override model for clearly positive inputs
     if _is_clearly_positive(req.symptoms):
@@ -288,7 +288,7 @@ async def _do_twilio_call(guardian_phone: str, patient_name: str, event_id: Opti
     tok  = os.getenv("TWILIO_AUTH_TOKEN")
     frm  = os.getenv("TWILIO_FROM_NUMBER")
     if not all([sid, tok, frm, guardian_phone]):
-        log.warning("Twilio not configured — skipping silent call")
+        log.warning("Twilio not configured   skipping silent call")
         return
     twiml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <Response>
@@ -328,3 +328,8 @@ def _classify(text: str):
     except Exception:
         pd, conf = {pred: 1.0}, 0.75
     return pred, conf, pd
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

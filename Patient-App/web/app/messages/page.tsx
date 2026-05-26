@@ -242,7 +242,7 @@ export default function PatientMessagesPage() {
             </button>
           </div>
           <p className="text-xs text-gray-400 text-center mt-2">
-            Secure messaging — only you and your therapist can read these
+            Secure messaging   only you and your therapist can read these
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-# Environment files — NEVER commit these
+# Environment files   NEVER commit these
 .env
 .env.local
 .env.production
@@ -16,7 +16,7 @@ venv/
 dist/
 web-build/
 
-# NLP models (too large for git — use Render disk or Supabase storage)
+# NLP models (too large for git   use Render disk or Supabase storage)
 backend/models/*.pkl
 
 # OS

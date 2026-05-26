@@ -102,7 +102,7 @@ export default function LandingPage() {
         </h1>
 
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-          PsychAI combining expert AI models with clinical NLP to give you empathetic support, mood tracking, CBT journaling, and crisis detection — all in one safe, private space.
+          PsychAI combining expert AI models with clinical NLP to give you empathetic support, mood tracking, CBT journaling, and crisis detection   all in one safe, private space.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">

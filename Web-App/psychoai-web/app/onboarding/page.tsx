@@ -64,7 +64,7 @@ export default function OnboardingPage() {
         {step === 2 && (
           <div>
             <h1 className="font-display font-extrabold text-3xl text-gray-900 mb-2">What brings you here?</h1>
-            <p className="text-gray-500 mb-8">No judgment — helps me support you better.</p>
+            <p className="text-gray-500 mb-8">No judgment   helps me support you better.</p>
             <div className="flex flex-wrap gap-3 mb-8">
               {REASONS.map(r => (
                 <button key={r} onClick={() => setReason(r)}
@@ -83,7 +83,7 @@ export default function OnboardingPage() {
             <p className="text-gray-500 mb-8">If your psychologist gave you a code, enter it here. You can skip this.</p>
             <input value={code} onChange={e => setCode(e.target.value.toUpperCase())} placeholder="e.g. DR-SHARMA-2024" autoFocus
               className="w-full border-2 border-gray-200 focus:border-teal-400 rounded-2xl px-5 py-4 text-lg font-mono text-gray-900 focus:outline-none mb-4"/>
-            <p className="text-sm text-gray-400 mb-6 text-center">Don't have one? Skip — you can add it later in Profile.</p>
+            <p className="text-sm text-gray-400 mb-6 text-center">Don't have one? Skip   you can add it later in Profile.</p>
             <button onClick={finish} disabled={loading}
               className="w-full bg-teal-500 hover:bg-teal-600 disabled:opacity-50 text-white font-bold py-4 rounded-2xl transition-colors">
               {loading ? 'Setting up...' : "Let's go"}

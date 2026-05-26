@@ -126,7 +126,7 @@ export default function MindfulnessPage() {
           {/* Grounding */}
           <div>
             <h2 className="font-display font-bold text-lg text-gray-900 mb-4">5-4-3-2-1 Grounding</h2>
-            <p className="text-sm text-gray-500 mb-4">For anxiety or panic — anchor yourself to the present moment.</p>
+            <p className="text-sm text-gray-500 mb-4">For anxiety or panic   anchor yourself to the present moment.</p>
             {gStep === null ? (
               <button onClick={() => setGStep(0)} className="w-full card p-6 flex items-center justify-center gap-3 hover:shadow-md transition-shadow">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9.59 4.59A2 2 0 1113 6H2" stroke="#1A56DB" strokeWidth="1.8"/><path d="M2 12h20" stroke="#1A56DB" strokeWidth="1.8"/></svg>

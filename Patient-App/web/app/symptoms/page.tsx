@@ -13,9 +13,9 @@ const CHIPS = [
 // Keys must match EXACTLY what the model returns
 const SUGGESTIONS: Record<string, string[]> = {
   'Positive Wellbeing': [
-    'You\'re in a great place — keep nurturing your mental wellness!',
+    'You\'re in a great place   keep nurturing your mental wellness!',
     'Maintain your routine: sleep well, eat well, stay active',
-    'Share your positivity — it uplifts others around you',
+    'Share your positivity   it uplifts others around you',
     'Consider journaling to capture this feeling',
   ],
   'Anxiety / Panic Disorder': [
@@ -32,13 +32,13 @@ const SUGGESTIONS: Record<string, string[]> = {
   ],
   'Stress / Burnout': [
     'Use breathing exercises in the Mindfulness tab',
-    'Journal your thoughts — offload the mental load',
+    'Journal your thoughts   offload the mental load',
     'Set small, achievable goals for today',
     'Talk to someone you trust',
   ],
   'Anger / Irritability Disorder': [
     'Try box breathing before reacting (in 4, hold 4, out 4, hold 4)',
-    'Identify your triggers — journaling helps',
+    'Identify your triggers   journaling helps',
     'Physical activity can release pent-up frustration',
     'iCall helpline: 9152987821',
   ],
@@ -49,13 +49,13 @@ const SUGGESTIONS: Record<string, string[]> = {
     'Write a worry list before bed to clear your mind',
   ],
   'Loneliness / Social Isolation': [
-    'Reach out to one person today — a text is enough',
+    'Reach out to one person today   a text is enough',
     'Join a club, class, or online community',
-    'Chat with PsychAI — you\'re not alone',
+    'Chat with PsychAI   you\'re not alone',
     'iCall helpline: 9152987821',
   ],
   'Grief / Loss': [
-    'Allow yourself to grieve — there\'s no timeline',
+    'Allow yourself to grieve   there\'s no timeline',
     'Talk to someone who knew the person you lost',
     'Consider grief counselling',
     'iCall helpline: 9152987821',
@@ -68,18 +68,18 @@ const SUGGESTIONS: Record<string, string[]> = {
   ],
   'Suicidal Ideation': [
     'Please call iCall RIGHT NOW: 9152987821',
-    'You are not alone — help is available 24/7',
+    'You are not alone   help is available 24/7',
     'Go to your nearest hospital emergency if you feel unsafe',
     'Tell someone you trust how you are feeling',
   ],
   'OCD': [
     'ERP therapy (Exposure & Response Prevention) is the gold standard',
-    'Avoid giving in to compulsions — delay them by 5 minutes',
-    'Speak to a psychiatrist — OCD responds well to treatment',
+    'Avoid giving in to compulsions   delay them by 5 minutes',
+    'Speak to a psychiatrist   OCD responds well to treatment',
     'iCall helpline: 9152987821',
   ],
   'Bipolar Disorder': [
-    'Mood tracking daily is essential — use the Mood tab',
+    'Mood tracking daily is essential   use the Mood tab',
     'A psychiatrist can help with mood stabilisation',
     'Maintain a consistent sleep schedule',
     'iCall helpline: 9152987821',
@@ -87,7 +87,7 @@ const SUGGESTIONS: Record<string, string[]> = {
   'Eating Disorder': [
     'Speak to a nutritionist and a therapist together',
     'National Alliance for Eating Disorders helpline for support',
-    'Avoid diet culture content — curate your feed',
+    'Avoid diet culture content   curate your feed',
     'iCall helpline: 9152987821',
   ],
   'Substance Dependency': [
@@ -110,7 +110,7 @@ const SUGGESTIONS: Record<string, string[]> = {
   ],
 };
 
-// Color for confidence badge — green for positive, amber/red for concerns
+// Color for confidence badge   green for positive, amber/red for concerns
 function getBadgeColor(condition: string, confidence: number) {
   if (condition === 'Positive Wellbeing') return '#0E9F6E';
   if (confidence > 0.8) return '#E02424';
@@ -291,9 +291,9 @@ export default function SymptomsPage() {
               <h3 className="font-display font-bold text-gray-900 mb-3">How it works</h3>
               <div className="space-y-4">
                 {[
-                  { n: 1, t: 'You select symptoms', d: 'Choose from the list or describe in your own words — including positive feelings!' },
+                  { n: 1, t: 'You select symptoms', d: 'Choose from the list or describe in your own words   including positive feelings!' },
                   { n: 2, t: 'NLP analysis', d: 'Your input is processed by a classifier trained on mental health records across 15 conditions.' },
-                  { n: 3, t: 'Pattern detected', d: 'The model identifies the most likely condition — including Positive Wellbeing.' },
+                  { n: 3, t: 'Pattern detected', d: 'The model identifies the most likely condition   including Positive Wellbeing.' },
                   { n: 4, t: 'Suggested next steps', d: 'Evidence-based resources tailored to the detected pattern.' },
                 ].map(s => (
                   <div key={s.n} className="flex gap-3">

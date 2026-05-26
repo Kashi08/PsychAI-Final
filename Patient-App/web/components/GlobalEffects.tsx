@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 
 /* ==========================================================================
-   GlobalEffects — ported from psychai-portal/src/main.js
+   GlobalEffects   ported from psychai-portal/src/main.js
    Adds to the patient app:
      1. Mouse click sparkle particles (coloured dots bursting out on every click)
      2. Confetti explosion on any .btn-confetti element
@@ -86,5 +86,5 @@ export default function GlobalEffects() {
     initConfettiButtons();
   }, []);
 
-  return null; // purely behavioural — no UI
+  return null; // purely behavioural   no UI
 }

@@ -9,11 +9,11 @@ const CBT = [
   { id:'thought', label:'What were you thinking?', hint:'What thoughts went through your mind?' },
   { id:'feeling', label:'How did it make you feel?',hint:'Name emotions + rate intensity 1-10.' },
   { id:'reframe', label:'Balanced perspective',    hint:'What would a supportive friend say?' },
-  { id:'positive',label:'One small positive thing',hint:'Even tiny — what went well today?' },
+  { id:'positive',label:'One small positive thing',hint:'Even tiny   what went well today?' },
 ];
 const FREE_PROMPTS = [
   "What's been on your mind today?",
-  "Describe your mood in three words — then explain each one.",
+  "Describe your mood in three words   then explain each one.",
   "What drained your energy this week? What gave you energy?",
   "Write a letter to your past self from 3 months ago.",
   "What would you do today if you weren't afraid?",
@@ -89,7 +89,7 @@ export default function JournalPage() {
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-gray-900">Free Write</h3>
-                  <p className="text-sm text-gray-500 mt-0.5">Open canvas — write anything on your mind</p>
+                  <p className="text-sm text-gray-500 mt-0.5">Open canvas   write anything on your mind</p>
                 </div>
               </button>
             </div>

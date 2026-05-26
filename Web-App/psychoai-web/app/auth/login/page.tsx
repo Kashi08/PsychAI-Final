@@ -1,69 +1,16 @@
 'use client';
 export const dynamic = 'force-dynamic';
 
-import { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import Link from 'next/link';
-import { supabase } from '@/lib/supabase';
-
-const DEMO_EMAIL = 'demo@psychai.app';
-const DEMO_PASS  = 'PsychAI@Demo2024';
+import { Suspense } from 'react';
+import LoginContent from './login-content';
 
 export default function LoginPage() {
-  const router = useRouter();
-  const params = useSearchParams();
-  const [email, setEmail]         = useState('');
-  const [password, setPassword]   = useState('');
-  const [isSignUp, setIsSignUp]   = useState(false);
-  const [loading, setLoading]     = useState(false);
-  const [demoLoad, setDemoLoad]   = useState(false);
-  const [error, setError]         = useState('');
-  const [showPw, setShowPw]       = useState(false);
-
-  useEffect(() => {
-    if (params.get('demo') === 'true') handleDemo();
-  }, []);
-
-  const handleAuth = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(''); setLoading(true);
-    try {
-      if (isSignUp) {
-        const { error: err } = await supabase.auth.signUp({ email, password });
-        if (err) throw err;
-        router.push('/onboarding');
-      } else {
-        const { error: err } = await supabase.auth.signInWithPassword({ email, password });
-        if (err) throw err;
-        router.push('/dashboard');
-      }
-    } catch (e: any) {
-      setError(e.message || 'Something went wrong');
-    } finally { setLoading(false); }
-  };
-
-  const handleDemo = async () => {
-    setDemoLoad(true); setError('');
-    try {
-      const { error: err } = await supabase.auth.signInWithPassword({
-        email: DEMO_EMAIL, password: DEMO_PASS,
-      });
-      if (err) throw err;
-      router.push('/dashboard');
-    } catch {
-      // Try to create demo account
-      try {
-        await supabase.auth.signUp({ email: DEMO_EMAIL, password: DEMO_PASS });
-        const { error: err2 } = await supabase.auth.signInWithPassword({ email: DEMO_EMAIL, password: DEMO_PASS });
-        if (err2) throw err2;
-        router.push('/dashboard');
-      } catch (e: any) {
-        setError('Demo unavailable. Please create a free account.');
-      }
-    } finally { setDemoLoad(false); }
-  };
-
   return (
+    <Suspense fallback={<div className="min-h-screen bg-white flex items-center justify-center">Loading...</div>}>
+      <LoginContent />
+    </Suspense>
+  );
+}
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4">
       <div className="w-full max-w-sm animate-fade-in">
         {/* Logo */}

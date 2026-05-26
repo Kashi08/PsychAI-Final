@@ -4,7 +4,7 @@ import GlobalEffects from '@/components/GlobalEffects';
 import { ThemeProvider } from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
-  title: 'PsychAI — Mental Wellness Companion',
+  title: 'PsychAI   Mental Wellness Companion',
   description: 'AI-powered mental health support for students and professionals.',
   icons: { icon: '/favicon.ico' },
 };

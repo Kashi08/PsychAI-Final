@@ -1,4 +1,4 @@
-PsychAI Web App — Setup Guide
+PsychAI Web App   Setup Guide
 ==============================
 
 Demo account:
@@ -18,7 +18,7 @@ Pages included:
   /profile           Profile, avatar color, badges, settings
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 1 — Open in VS Code
+STEP 1   Open in VS Code
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 1. Extract the ZIP
@@ -27,7 +27,7 @@ STEP 1 — Open in VS Code
 4. Open terminal: Ctrl+` (backtick)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 2 — Install dependencies
+STEP 2   Install dependencies
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 In the terminal:
@@ -38,7 +38,7 @@ This installs Next.js, Tailwind, Supabase client, Recharts, Zustand.
 Takes 1-2 minutes.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 3 — Add your API keys
+STEP 3   Add your API keys
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Open .env.local (already in this folder) and fill in:
@@ -51,7 +51,7 @@ Get Supabase URL and anon key from:
   supabase.com → your project → Settings → API
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 4 — Run locally
+STEP 4   Run locally
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
     npm run dev
@@ -59,10 +59,10 @@ STEP 4 — Run locally
 Open browser → http://localhost:3000
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 5 — Deploy to Vercel (Free)
+STEP 5   Deploy to Vercel (Free)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Option A — Vercel CLI (fastest):
+Option A   Vercel CLI (fastest):
 
     npm install -g vercel
     vercel
@@ -70,7 +70,7 @@ Option A — Vercel CLI (fastest):
 Follow the prompts. When asked for env variables, add all three
 from your .env.local.
 
-Option B — GitHub (recommended for ongoing updates):
+Option B   GitHub (recommended for ongoing updates):
 
 1. Push this folder to GitHub:
        git init
@@ -87,7 +87,7 @@ Option B — GitHub (recommended for ongoing updates):
 Your site will be live at: https://psychoai-web.vercel.app
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 6 — Connect your custom domain
+STEP 6   Connect your custom domain
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 1. Vercel dashboard → your project → Settings → Domains
