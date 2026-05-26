@@ -168,7 +168,7 @@ export default function OverviewPage() {
             {CLINICAL_QUOTES[quoteIdx].text}
           </p>
           <span className="text-[10px] text-psych-500/80 font-bold self-end mt-1 uppercase tracking-wider group-hover:text-psych-600">
-            — {CLINICAL_QUOTES[quoteIdx].author}
+              {CLINICAL_QUOTES[quoteIdx].author}
           </span>
         </div>
       </div>

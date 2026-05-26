@@ -116,7 +116,7 @@ export default function RequestsPage() {
     setRequests(prev => prev.filter(r => r.id !== req.id));
     setSuccessMsg(
       action === 'active'
-        ? `✓ Accepted — ${req.patient_name} is now linked to your account.`
+        ? `✓ Accepted   ${req.patient_name} is now linked to your account.`
         : `✗ Declined request from ${req.patient_name}.`
     );
     setTimeout(() => setSuccessMsg(''), 4000);

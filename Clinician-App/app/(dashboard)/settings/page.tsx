@@ -61,6 +61,8 @@ export default function SettingsPage() {
   const [notif, setNotif]   = useState({ crisis:true, session:true, message:true, weekly:false });
   const [selectedTheme, setSelectedTheme] = useState('purple');
   const [avatarSeed, setAvatarSeed] = useState('Doctor');
+  const [savingTheme, setSavingTheme] = useState(false);
+  const [themeSaved, setThemeSaved] = useState(false);
 
   useEffect(() => {
     const t = localStorage.getItem('psychai-theme') || 'purple';
@@ -72,8 +74,7 @@ export default function SettingsPage() {
     });
   }, []);
 
-  const changeTheme = (name: string) => {
-    localStorage.setItem('psychai-theme', name);
+  const previewTheme = (name: string) => {
     setSelectedTheme(name);
     const themeColors = THEMES[name]?.colors;
     if (themeColors) {
@@ -81,6 +82,15 @@ export default function SettingsPage() {
         document.documentElement.style.setProperty(key, val as string);
       });
     }
+  };
+
+  const saveTheme = async () => {
+    setSavingTheme(true);
+    localStorage.setItem('psychai-theme', selectedTheme);
+    await new Promise(r => setTimeout(r, 400));
+    setSavingTheme(false);
+    setThemeSaved(true);
+    setTimeout(() => setThemeSaved(false), 3000);
   };
 
   const save = async () => {
@@ -202,7 +212,7 @@ export default function SettingsPage() {
         <p className="text-xs text-gray-400 mb-4 font-semibold">Customize the application workspace color theme dynamically.</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {Object.entries(THEMES).map(([key, value]) => (
-            <button key={key} onClick={() => changeTheme(key)}
+            <button key={key} onClick={() => previewTheme(key)}
               className={`p-3.5 rounded-2xl border text-left flex flex-col justify-between h-20 transition-all duration-200 ${selectedTheme===key?'border-psych-500 bg-psych-50/20 shadow-sm scale-102':'border-gray-200 hover:border-psych-200 hover:bg-gray-50/40'}`}>
               <span className="text-xs font-bold text-gray-800 capitalize leading-none">{key} theme</span>
               <div className="flex items-center gap-1.5 mt-2">
@@ -211,6 +221,19 @@ export default function SettingsPage() {
               </div>
             </button>
           ))}
+        </div>
+
+        <div className="mt-6 flex justify-end items-center">
+          {themeSaved && (
+            <span className="text-sm font-bold text-green-600 animate-spring flex items-center gap-1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Theme saved successfully
+            </span>
+          )}
+          <button onClick={saveTheme} disabled={savingTheme}
+            className="ml-auto bg-psych-500 hover:bg-psych-600 disabled:opacity-50 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md shadow-psych-500/10 hover:scale-[1.02] active:scale-[0.98] text-sm">
+            {savingTheme ? 'Saving Theme...' : 'Save Theme'}
+          </button>
         </div>
       </div>
 

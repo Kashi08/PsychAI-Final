@@ -32,19 +32,12 @@ export default function PsychLogin() {
 
         {/* Header */}
         <div className="text-center mb-8 animate-slide-up delay-1">
-          <div className="inline-flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-2xl bg-psych-500 flex items-center justify-center shadow-lg shadow-psych-500/25 animate-bounce-slow">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26C17.81 13.47 19 11.38 19 9c0-3.87-3.13-7-7-7z" stroke="white" strokeWidth="1.8"/>
-                <path d="M9 21h6M10 21v-2M14 21v-2" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-              </svg>
-            </div>
-            <div className="text-left">
-              <div className="font-display font-extrabold text-2xl text-gray-900 leading-none">PsychAI</div>
-              <div className="text-xs text-psych-600 font-bold tracking-wider uppercase mt-1">Clinician Portal</div>
-            </div>
+          <div className="w-20 h-20 bg-white/60 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto mb-4 animate-bounce-slow shadow-md border border-psych-100/50 p-2">
+            <img src="/logo.png" alt="PsychAI Logo" className="w-full h-full object-contain" />
           </div>
-          <p className="text-gray-500 text-sm">Secure access for licensed mental health professionals</p>
+          <h1 className="font-display font-extrabold text-3xl text-gray-900">PsychAI</h1>
+          <p className="text-xs text-psych-600 font-bold tracking-wider uppercase mt-1">Clinician Portal</p>
+          <p className="text-gray-500 text-sm mt-2">Secure access for licensed mental health professionals</p>
         </div>
 
 

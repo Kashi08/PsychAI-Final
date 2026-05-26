@@ -1,5 +1,5 @@
 -- ============================================================
--- PsychAI Psychologist App — Additional Database Schema
+-- PsychAI Psychologist App   Additional Database Schema
 -- Run this in Supabase SQL Editor AFTER the patient schema.sql
 -- ============================================================
 

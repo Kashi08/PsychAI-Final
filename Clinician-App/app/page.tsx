@@ -32,7 +32,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-gradient-mesh flex flex-col relative overflow-hidden">
       {/* Decorative background glows */}
       <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-psych-200/20 rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: '8s' }} />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-300/20 rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: '10s' }} />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-psych-300/20 rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: '10s' }} />
 
       {/* Nav */}
       <nav className="sticky top-0 z-50 w-full bg-white/40 backdrop-blur-xl border-b border-white/50 shadow-sm transition-all duration-300">
@@ -47,7 +47,7 @@ export default function LandingPage() {
             <Link href="/auth/login" className="text-sm text-gray-600 hover:text-gray-900 font-bold px-4 py-2.5 rounded-2xl transition-colors">
               Sign in
             </Link>
-            <Link href="/auth/login" className="text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-2xl transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 active:translate-y-0 duration-200 border border-blue-500">
+            <Link href="/auth/login" className="text-sm font-bold text-white bg-psych-500 hover:bg-psych-600 px-6 py-3 rounded-2xl transition-all shadow-lg shadow-psych-500/30 hover:shadow-psych-500/50 hover:-translate-y-0.5 active:translate-y-0 duration-200 border border-psych-500">
               Get started free
             </Link>
           </div>
@@ -57,10 +57,10 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="relative max-w-5xl mx-auto px-6 pt-24 pb-16 text-center z-10 flex-grow">
         {/* Soft centered background glow */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-gradient-to-tr from-blue-200/20 to-psych-200/20 blur-[80px] rounded-full pointer-events-none -z-10" />
+        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-gradient-to-tr from-psych-100/20 to-psych-200/20 blur-[80px] rounded-full pointer-events-none -z-10" />
 
         <div className="hero-badge mb-8 inline-flex items-center gap-2 bg-white/40 backdrop-blur-md px-4.5 py-2 rounded-full border border-white/60 shadow-glass text-gray-700 font-medium text-sm">
-          <div className="w-2.5 h-2.5 rounded-full bg-blue-500 alert-pulse-badge shadow-[0_0_10px_rgba(59,130,246,0.8)]"></div>
+          <div className="w-2.5 h-2.5 rounded-full bg-psych-500 alert-pulse-badge shadow-[0_0_10px_rgba(124,111,205,0.8)]"></div>
           HIPAA-compliant · Secure · AI-Powered
         </div>
 
@@ -74,11 +74,11 @@ export default function LandingPage() {
         </h1>
 
         <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-          PsychAI empowers therapists and clinicians with AI-driven patient insights, automated session notes, mood tracking analytics, and secure telehealth — all in one safe, private space.
+          PsychAI empowers therapists and clinicians with AI-driven patient insights, automated session notes, mood tracking analytics, and secure telehealth   all in one safe, private space.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
-          <Link href="/auth/login" className="btn-confetti flex items-center justify-center gap-2.5 w-full bg-blue-600 hover:bg-blue-700 border border-blue-500 text-white font-bold text-lg px-10 py-5 rounded-2xl transition-all shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-1 active:translate-y-0 duration-300">
+          <Link href="/auth/login" className="btn-confetti flex items-center justify-center gap-2.5 w-full bg-psych-500 hover:bg-psych-600 border border-psych-500 text-white font-bold text-lg px-10 py-5 rounded-2xl transition-all shadow-xl shadow-psych-500/30 hover:shadow-psych-500/50 hover:-translate-y-1 active:translate-y-0 duration-300">
             Start for free
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="translate-y-[0.5px]">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -90,7 +90,7 @@ export default function LandingPage() {
         <p className="text-xs text-gray-400 font-bold mb-20 tracking-wider uppercase">No credit card required · Free account · Instant setup</p>
 
         {/* Dashboard Preview Mockup (Deep Glassmorphism) */}
-        <div className="max-w-4xl mx-auto bg-white/30 backdrop-blur-2xl border border-white/60 rounded-3xl p-6 md:p-8 shadow-[0_8px_32px_rgba(31,38,135,0.07)] relative mb-24 hover:shadow-[0_8px_40px_rgba(59,130,246,0.15)] transition-all duration-500 group">
+        <div className="max-w-4xl mx-auto bg-white/30 backdrop-blur-2xl border border-white/60 rounded-3xl p-6 md:p-8 shadow-[0_8px_32px_rgba(31,38,135,0.07)] relative mb-24 hover:shadow-[0_8px_40px_rgba(124,111,205,0.15)] transition-all duration-500 group">
           <div className="absolute top-4 left-4 flex gap-2">
             <span className="w-3 h-3 rounded-full bg-red-400/80 shadow-sm"></span>
             <span className="w-3 h-3 rounded-full bg-yellow-400/80 shadow-sm"></span>
@@ -102,7 +102,7 @@ export default function LandingPage() {
             {/* Left Mock Panel: Patient Overview */}
             <div className="bg-white/40 backdrop-blur-md rounded-2xl p-5 border border-white/50 flex flex-col justify-between group-hover:-translate-y-1 transition-transform duration-500 shadow-sm">
               <div>
-                <span className="text-xs font-bold text-blue-700 bg-blue-100/50 backdrop-blur-sm px-2.5 py-1 rounded-full uppercase tracking-wider">Patient Overview</span>
+                <span className="text-xs font-bold text-psych-700 bg-psych-100/50 backdrop-blur-sm px-2.5 py-1 rounded-full uppercase tracking-wider">Patient Overview</span>
                 <h3 className="font-display font-bold text-xl text-gray-900 mt-3 mb-2">Automated Risk Tracking</h3>
                 <p className="text-xs text-gray-600 leading-relaxed mb-4">Instantly monitor patient emotional trajectories and receive alerts for high-risk language.</p>
               </div>
@@ -147,8 +147,8 @@ export default function LandingPage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {FEATURES.map((f, idx) => (
-            <div key={f.title} className="card p-7 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(59,130,246,0.12)] hover:-translate-y-2 flex flex-col justify-between bg-white/50 backdrop-blur-sm border-white/60 relative group overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-blue-500/0 group-hover:from-blue-500/5 group-hover:to-psych-500/5 transition-colors duration-500" />
+            <div key={f.title} className="card p-7 transition-all duration-300 hover:shadow-[0_8px_30px_rgba(124,111,205,0.12)] hover:-translate-y-2 flex flex-col justify-between bg-white/50 backdrop-blur-sm border-white/60 relative group overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-psych-500/0 to-psych-500/0 group-hover:from-psych-500/5 group-hover:to-psych-500/10 transition-colors duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 border border-white shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" style={{ background: f.bg }}>
                   {f.icon}
@@ -162,8 +162,8 @@ export default function LandingPage() {
       </section>
 
       {/* Inviting supportive CTA section */}
-      <section className="relative bg-blue-50/30 backdrop-blur-md border-t border-b border-blue-100/50 py-24 z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-200/20 via-transparent to-transparent pointer-events-none" />
+      <section className="relative bg-psych-50/30 backdrop-blur-md border-t border-b border-psych-100/50 py-24 z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-psych-200/20 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-3xl mx-auto px-6 text-center relative">
           <h2 className="font-display font-extrabold text-4xl mb-5 text-gray-900 drop-shadow-sm">
             Elevate your <span className="gradient-text">clinical practice</span>
@@ -171,7 +171,7 @@ export default function LandingPage() {
           <p className="text-gray-600 font-medium text-lg mb-10 leading-relaxed max-w-xl mx-auto">
             PsychAI provides a secure, powerful, and intuitive platform to manage patients, analyze trends, and reduce administrative burden.
           </p>
-          <Link href="/auth/login" className="btn-confetti inline-flex items-center gap-2.5 bg-blue-600 hover:bg-blue-700 border border-blue-500 text-white font-bold px-8 py-4.5 rounded-2xl transition-all shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-1 active:translate-y-0 duration-300">
+          <Link href="/auth/login" className="btn-confetti inline-flex items-center gap-2.5 bg-psych-500 hover:bg-psych-600 border border-psych-500 text-white font-bold px-8 py-4.5 rounded-2xl transition-all shadow-xl shadow-psych-500/30 hover:shadow-psych-500/50 hover:-translate-y-1 active:translate-y-0 duration-300">
             Create Clinician Account
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </Link>

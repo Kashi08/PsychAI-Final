@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'PsychAI — Clinician Dashboard',
+  title: 'PsychAI   Clinician Dashboard',
   description: 'Professional psychologist dashboard for patient monitoring and analytics.',
 };
 

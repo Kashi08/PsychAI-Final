@@ -1,4 +1,4 @@
-PsychAI — Psychologist Web App Setup Guide
+PsychAI   Psychologist Web App Setup Guide
 ==========================================
 
 Demo credentials:
@@ -12,18 +12,18 @@ PAGES IN THIS APP
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 /auth/login     Clinician login with demo button
-/overview       Main dashboard — stats, mood trend, risk distribution
+/overview       Main dashboard   stats, mood trend, risk distribution
 /patients       All patients with search, filter, sort by risk
-/patients/[id]  Individual patient — mood chart, AI summary, chat, notes
+/patients/[id]  Individual patient   mood chart, AI summary, chat, notes
 /alerts         Crisis alerts with Twilio status and resolve button
 /sessions       Upcoming session calendar
 /messages       Secure patient messaging (HIPAA-safe)
-/analytics      Group analytics — mood trends, engagement, keywords
+/analytics      Group analytics   mood trends, engagement, keywords
 /reports        Generate + download PDF patient reports
 /settings       Profile, access code, notification prefs
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 1 — Open in VS Code
+STEP 1   Open in VS Code
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 1. Extract PsychAI-Psychologist.zip
@@ -31,13 +31,13 @@ STEP 1 — Open in VS Code
 3. Open terminal: Ctrl+`
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 2 — Install dependencies
+STEP 2   Install dependencies
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   npm install
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 3 — Set up Supabase (add psych tables)
+STEP 3   Set up Supabase (add psych tables)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 1. Go to supabase.com → your project → SQL Editor
@@ -52,7 +52,7 @@ STEP 3 — Set up Supabase (add psych tables)
    Replace with the actual UUID → Run just the DO $$ block
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 4 — Fill in .env.local
+STEP 4   Fill in .env.local
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Open .env.local and add your values:
@@ -65,7 +65,7 @@ Same Supabase project as patient app.
 Same Groq key from console.groq.com (free).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 5 — Run locally
+STEP 5   Run locally
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   npm run dev
@@ -74,7 +74,7 @@ Opens on http://localhost:3001
 (Patient web app runs on 3000, psych app on 3001)
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-STEP 6 — Deploy to Vercel
+STEP 6   Deploy to Vercel
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 1. Push to GitHub (different repo from patient app)
@@ -114,7 +114,7 @@ Patient detail page → "Generate with Groq" button:
   Sends patient data to /api/ai-summary
   Groq (Llama 3.3 70B) generates a 3-4 sentence clinical summary
   Includes: mood trends, PHQ-9/GAD-7, journal excerpts, risk level
-  Free — uses same Groq key
+  Free   uses same Groq key
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 FOLDER STRUCTURE

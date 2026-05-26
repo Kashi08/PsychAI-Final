@@ -48,7 +48,7 @@ const DEMO_MESSAGES: Record<string, any[]> = {
     { role:'patient', content:"Doctor, I've been having a very tough week. The thoughts are coming back.", time:'2:10 PM' },
     { role:'psych',   content:"Thank you for reaching out. I'm glad you did. Can you tell me more about what's been happening? Are you safe right now?", time:'2:15 PM' },
     { role:'patient', content:'Yes, I am safe. Just feeling very low. The exam results were bad.', time:'2:20 PM' },
-    { role:'psych',   content:"I hear you. Academic setbacks can feel overwhelming. Remember what we discussed — one result does not define you. Let's talk more in our session Thursday. Can you do the thought record exercise tonight?", time:'2:25 PM' },
+    { role:'psych',   content:"I hear you. Academic setbacks can feel overwhelming. Remember what we discussed   one result does not define you. Let's talk more in our session Thursday. Can you do the thought record exercise tonight?", time:'2:25 PM' },
     { role:'patient', content:'Thank you for checking in, Doctor.', time:'2:30 PM' },
   ],
   M002: [
@@ -245,7 +245,7 @@ export default function MessagesPage() {
           {isRealMode && (
             <div className="mt-2 flex items-center gap-1.5 text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-lg px-2.5 py-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"/>
-              Live — {linkedPatients.length} linked patient{linkedPatients.length > 1 ? 's' : ''}
+              Live   {linkedPatients.length} linked patient{linkedPatients.length > 1 ? 's' : ''}
             </div>
           )}
         </div>
@@ -291,7 +291,7 @@ export default function MessagesPage() {
           {/* Demo watermark when no real patients */}
           {!isRealMode && (
             <div className="px-5 py-3 bg-amber-50 border-t border-amber-100">
-              <p className="text-[10px] text-amber-600 font-bold">⚠ Demo mode — accept a patient request to enable live messaging</p>
+              <p className="text-[10px] text-amber-600 font-bold">⚠ Demo mode   accept a patient request to enable live messaging</p>
             </div>
           )}
         </div>

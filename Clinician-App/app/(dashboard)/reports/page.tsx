@@ -14,9 +14,9 @@ const RANGE_LABELS: Record<string,string> = {
 };
 
 const PAST_REPORTS = [
-  { name:'Monthly report — March 2026', date:'Apr 1, 2026', pages:6, patients:5 },
-  { name:'Arjun Mehta — Progress report', date:'Mar 15, 2026', pages:3, patients:1 },
-  { name:'Monthly report — February 2026', date:'Mar 1, 2026', pages:5, patients:4 },
+  { name:'Monthly report   March 2026', date:'Apr 1, 2026', pages:6, patients:5 },
+  { name:'Arjun Mehta   Progress report', date:'Mar 15, 2026', pages:3, patients:1 },
+  { name:'Monthly report   February 2026', date:'Mar 1, 2026', pages:5, patients:4 },
 ];
 
 export default function ReportsPage() {
@@ -84,7 +84,7 @@ export default function ReportsPage() {
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<title>PsychAI Report — ${now}</title>
+<title>PsychAI Report   ${now}</title>
 <style>
   body { font-family: 'Segoe UI', sans-serif; color: #111827; margin: 40px; background: #fff; }
   h1   { color: #7C6FCD; font-size: 24px; margin-bottom: 4px; }
@@ -143,7 +143,7 @@ export default function ReportsPage() {
 </table>
 
 <div class="footer">
-  Confidential — PsychAI · This report is for clinical use only · ${now}
+  Confidential   PsychAI · This report is for clinical use only · ${now}
 </div>
 </body>
 </html>`;
